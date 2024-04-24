@@ -20,14 +20,19 @@ function registerClick(value){
 
     else if (operation.length === 1) {
         if (isNum(value)) {
-            operation[0] += value
+            if ((value === ".")){
+                if (!(operation[0].includes('.'))) {
+
+                    operation[0] += value
+                }
+            } else {
+                operation[0] += value
+            }
         }
         else if (value === "plusminus"){
             operation[0] *= -1
         }
-        else if ((value === ".") && (!(operation[0].includes('.')))){
-            operation[0] += value
-        }
+        
         else if (value === "percent"){
             operation[0] *= .01
         }
@@ -43,9 +48,18 @@ function registerClick(value){
     }
 
     else if (operation.length === 3) {
+
+
         if (isNum(value)) {
-            operation[2] += value
-        } 
+            if ((value === ".")){
+                if (!(operation[2].includes('.'))) {
+
+                    operation[2] += value
+                }
+            } else {
+                operation[2] += value
+            }
+        }
         else if (value === "plusminus"){
             operation[2] *= -1
         }
@@ -56,7 +70,7 @@ function registerClick(value){
             operation[2] *= .01
         }
         else if (value === "equals"){
-            console.log(operation[0])
+            console.log(operation)
             let result = operate(parseInt(operation[0]), operation[1], parseInt(operation[2]))
 
             operation = []
@@ -69,7 +83,7 @@ function registerClick(value){
 }
 
 function isNum(str){
-    return !isNaN(Number(str))
+    return(str === '.' || !isNaN(Number(str)))
 }
 
 function output(){

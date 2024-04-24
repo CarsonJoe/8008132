@@ -20,6 +20,7 @@ body {
     border: 2px solid grey;
     border-radius: 15px;
     padding: 10px;
+    box-shadow: 5px 5px 0 0 #969696;
 }
 
 #calculator {
@@ -28,12 +29,15 @@ body {
     gap: 10px;
 }
 
-#output {
+#output-container {
+    height: 20px;
     text-align: right;
     background-color: #ccc;
     padding: 10px;
     width: 290px;
     border-radius: 4px;
+    box-shadow: -2px -2px 0 0 #969696;
+    border: 1px solid #969696;
 }
 
 button {
@@ -47,6 +51,8 @@ button {
     background: linear-gradient(#0000, rgb(0 0 0/10%)) top/100% 2000%;
     transition: .2s;
     box-shadow: #efefefc5 0 0 0 2px;
+    border: 1px solid #dfdfdf;
+    box-shadow: 2px 2px 0 0 #dfdfdf;
 }
 
 button:hover {
