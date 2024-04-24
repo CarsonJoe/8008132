@@ -75,7 +75,14 @@ button:hover {
 
 #title {
     position: absolute;
-    bottom: 20px;
-    right: 50px;
+    bottom: 50px;
+    right: 10px;
     color:darkred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width:418px;
+    padding: 0px;
+    margin: 0px;
 }
