@@ -3,7 +3,7 @@
 let operation = []
 
 
-function registerClick(value){
+function registerClick(value) {
     console.log(value)
 
     if (value === "clear") {
@@ -20,7 +20,7 @@ function registerClick(value){
 
     else if (operation.length === 1) {
         if (isNum(value)) {
-            if ((value === ".")){
+            if ((value === ".")) {
                 if (!(operation[0].includes('.'))) {
 
                     operation[0] += value
@@ -29,11 +29,11 @@ function registerClick(value){
                 operation[0] += value
             }
         }
-        else if (value === "plusminus"){
+        else if (value === "plusminus") {
             operation[0] *= -1
         }
-        
-        else if (value === "percent"){
+
+        else if (value === "percent") {
             operation[0] *= .01
         }
         else {
@@ -51,7 +51,7 @@ function registerClick(value){
 
 
         if (isNum(value)) {
-            if ((value === ".")){
+            if ((value === ".")) {
                 if (!(operation[2].includes('.'))) {
 
                     operation[2] += value
@@ -60,16 +60,16 @@ function registerClick(value){
                 operation[2] += value
             }
         }
-        else if (value === "plusminus"){
+        else if (value === "plusminus") {
             operation[2] *= -1
         }
-        else if ((value === ".") && (!(operation[2].includes('.')))){
+        else if ((value === ".") && (!(operation[2].includes('.')))) {
             operation[2] += value
         }
-        else if (value === "percent"){
+        else if (value === "percent") {
             operation[2] *= .01
         }
-        else if (value === "equals"){
+        else if (value === "equals") {
             console.log(operation)
             let result = operate(parseInt(operation[0]), operation[1], parseInt(operation[2]))
 
@@ -82,11 +82,11 @@ function registerClick(value){
     output()
 }
 
-function isNum(str){
-    return(str === '.' || !isNaN(Number(str)))
+function isNum(str) {
+    return (str === '.' || !isNaN(Number(str)))
 }
 
-function output(){
+function output() {
     document.getElementById("output").innerHTML = operation.join(' ')
 }
 
@@ -100,16 +100,16 @@ buttons.forEach((button) => {
 
 
 function operate(a, op, b) {
-    if(op==="+") {
-        return(a+b)
+    if (op === "+") {
+        return (a + b)
     }
-    if(op==="-") {
-        return(a-b)
+    if (op === "-") {
+        return (a - b)
     }
-    if(op==="/") {
-        return(a/b)
+    if (op === "/") {
+        return (a / b)
     }
-    if(op==="*") {
-        return(a*b)
+    if (op === "*") {
+        return (a * b)
     }
 }
